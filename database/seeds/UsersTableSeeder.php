@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             [
                 'id' 		=> 	1,
                 'name'	=>	'root_user',
-                'email'		=>	'admin@mroon.lab',
+                'email'		=>	'admin@maroon.lab',
                 'phone_number' => '01783511730',
                 'password'	=>	Hash::make('12345678')
             ]
