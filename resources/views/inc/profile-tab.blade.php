@@ -6,9 +6,9 @@
     </button>
     <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="{{route('login')}}">{{__('LOGIN')}}</a>
-        @if (Route::has('register'))
-            <a class="dropdown-item" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
-        @endif
+{{--        @if (Route::has('register'))--}}
+{{--            <a class="dropdown-item" href="{{ route('register') }}">{{ __('REGISTER') }}</a>--}}
+{{--        @endif--}}
     </div>
 </div>
 @else
