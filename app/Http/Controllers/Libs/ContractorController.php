@@ -22,10 +22,11 @@ class ContractorController extends Controller
     {
         if(auth()->user()->can('index contractor')){
             $contractors  = Contractor::active()->get();
+            $title = 'Contractor';
             $breacrumbs['libs'] = "#";
             $breacrumbs['contractors'] = route('contractor.index');
             return view('libs.contractor.index')->with([
-                'title' => 'Contractor',
+                'title' => $title,
                 'breadcrumbs'=> $breacrumbs,
                 'contractors' => $contractors
             ]);
@@ -41,7 +42,10 @@ class ContractorController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create Contractor';
+        $breacrumbs['libs'] = "#";
+        $breacrumbs['contractors'] = route('contractor.index');
+        $breacrumbs['create'] = route('contractor.create');
     }
 
     /**
@@ -63,7 +67,12 @@ class ContractorController extends Controller
      */
     public function show($id)
     {
-        //
+        $contractor = Contractor::find($id);
+
+        $title = 'Create Contractor';
+        $breacrumbs['libs'] = "#";
+        $breacrumbs['contractors'] = route('contractor.index');
+        $breacrumbs[$contractor->name] = route('contractor.show', $contractor->id);
     }
 
     /**
@@ -74,7 +83,11 @@ class ContractorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $contractor = Contractor::find($id);
+
+        $title = 'Edit Contractor';
+        $breacrumbs['libs'] = "#";
+        $breacrumbs['contractors'] = route('contractor.index');
     }
 
     /**
