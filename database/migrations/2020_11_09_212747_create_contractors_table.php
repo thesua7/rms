@@ -20,6 +20,7 @@ class CreateContractorsTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('nid')->nullable();
             $table->string('address')->nullable();
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }
